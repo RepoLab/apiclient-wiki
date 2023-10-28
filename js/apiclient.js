@@ -6,7 +6,7 @@
 
 // Particular to this app. Change if you fork!
 
-const server = 'https://apiclient.wiki/'
+const server = 'https://repolab.github.io/apiclient-wiki/'
 const clientID = "6ac53a07b581e30e47664cd9e8f3d0e4"
 
 // OAuth routes
