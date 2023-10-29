@@ -57,14 +57,14 @@
         </div>
       </div>
     </div>
-    <script id="page" lang="mustache">
+    <script id="page" type="text/mustache">
       <h1 id="page-title">{{page.title}}</h1>
       <nav class="navbar">
         <a class="nav-link visible" href="/edit?title={{page.title}}" id="edit-page" data-title="{{page.title}}">Edit</a>
       </nav>
       <div id="page-content">{{{content}}}</div>
     </script>
-    <script id="edit" lang="mustache">
+    <script id="edit" type="text/mustache">
       <h1 id="page-title">Editing {{page.title}}</h1>
       <div id="page-content">
       <form id="edit-page-form">
@@ -76,15 +76,15 @@
         <input type="submit" name="submit" id="submit" ></input>
       </div>
     </script>
-    <script id="loading" lang="mustache">
+    <script id="loading" type="text/mustache">
       <h1 id="page-title">{{title}}</h1>
       <div id="page-content">Loading...</div>
     </script>
-    <script id="no-such-route" lang="mustache">
+    <script id="no-such-route" type="text/mustache">
       <h1 id="page-title">No such route</h1>
       <div id="page-content">No such route &quot;{{route}}&quot;</div>
     </script>
-    <script id="search" lang="mustache">
+    <script id="search" type="text/mustache">
       <h1 id="page-title">Search results for '{{q}}'</h1>
       <div id="page-content">
         <ul id="search-results-list" class="list-unstyled">
@@ -103,7 +103,7 @@
         </ul>
       </div>
     </script>
-    <script id="featured" lang="mustache">
+    <script id="featured" type="text/mustache">
       <h1 id="page-title">Featured content for {{date}}</h1>
       <div id="page-content">
         <div class="media">
