@@ -513,7 +513,7 @@ $(document).ready(function() {
     return false
   })
 
-  let path = getPath()
+  let path = "/"
   let query = getQuery()
   routeTo(path, query)
 })
