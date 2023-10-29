@@ -7,7 +7,7 @@
 // Particular to this app. Change if you fork!
 
 const server = 'https://repolab.github.io/apiclient-wiki/'
-const subpath = 'apiclient-wiki/'
+const subpath = '/apiclient-wiki'
 const clientID = "6ac53a07b581e30e47664cd9e8f3d0e4"
 
 // OAuth routes
@@ -23,14 +23,14 @@ const root = 'https://api.wikimedia.org/core/v1/wikipedia/en/'
 const feeds = 'https://api.wikimedia.org/feed/v1/wikipedia/en/'
 
 const routes = [
-  [new RegExp('^/' + subpath + '$'), function() { showPage('Main Page')}],
-  [new RegExp('^/' + subpath + 'index$'), function() { showPage('Main Page')}],
-  [new RegExp('^/' + subpath + 'index.html$'), function() { showPage('Main Page')}],
-  [new RegExp('^/' + subpath + 'page/(.*)$'), function(match) { showPage(match[1]) }],
-  [new RegExp('^/' + subpath + 'callback$'), function() { endLogin() }],
-  [new RegExp('^/' + subpath + 'search$'), function(match, args) { search(args) }],
-  [new RegExp('^/' + subpath + 'edit$'), function(match, args) { edit(args) }],
-  [new RegExp('^/' + subpath + 'featured$'), function(match) { showFeatured() }]
+  [new RegExp('^' + subpath + '/$'), function() { showPage('Main Page')}],
+  [new RegExp('^' + subpath + '/index$'), function() { showPage('Main Page')}],
+  [new RegExp('^' + subpath + '/index.html$'), function() { showPage('Main Page')}],
+  [new RegExp('^' + subpath + '/page/(.*)$'), function(match) { showPage(match[1]) }],
+  [new RegExp('^' + subpath + '/callback$'), function() { endLogin() }],
+  [new RegExp('^' + subpath + '/search$'), function(match, args) { search(args) }],
+  [new RegExp('^' + subpath + '/edit$'), function(match, args) { edit(args) }],
+  [new RegExp('^' + subpath + '/featured$'), function(match) { showFeatured() }]
 ]
 
 const ajax = function(args) {
@@ -177,7 +177,7 @@ const noSuchRoute = function(route) {
 const routeTo = function(pathname, args) {
   for (let route of routes) {
     let [re, handler] = route
-    let m = pathname.match(re)
+    let m = (subpath + pathname).match(re)
     if (m) {
       handler(m, args)
       return
